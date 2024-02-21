@@ -232,8 +232,66 @@ case 3:
                 // //ytd..........
                 break;
 
-            case 7:
+        case 7:
+            let user = {
+                'id':21,
+                'name':'sharanya',
+                'working': {
+                    'language':'Javascript',
+                    'status':'active'
+                },
+                'results':true
 
-             break;
+            };
+            let user1 ={
+                'id':22,
+                'name':'janhvi',
+                'working' : {
+                    'language':'Javascript',
+                    'status':'inactive'
+                },
+                'results':true
+            };
+            let user2 = {
+                'id':21,
+                'name':'sharanya',
+                'working': {
+                    'language':'Javascript',
+                    'status':'active'
+                },
+                'results':true
+            };
+
+            console.log(deepEqual(user, user1));
+            console.log(deepEqual(user1,user2));
+            console.log(deepEqual(user,user2));
+            function deepEqual(obj1, obj2) {
+
+                //cannot directly comapare arrays or objects using ===. different memory locations 
+
+                // If both are not objects or arrays, compare directly
+                if (!(obj1 instanceof Object) || !(obj2 instanceof Object)) {
+                  return obj1 === obj2;
+                }
+              
+                // Get keys of both objects/arrays
+                const key1 = Object.keys(obj1);
+                const key2 = Object.keys(obj2);
+              
+                // If number of keys are different, objects are not equal
+                if (key1.length !== key2.length) {
+                  return false;
+                }
+              
+                // Check each key and value recursively
+                for (let key of key1) {
+                  if (!key2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
+                    return false;
+                  }
+                }
+              
+                return true;
+              }
+            break;
 }
 
