@@ -1,5 +1,5 @@
 
-let age=25;
+let age=prompt("Enter age: ");
 let arraySize=25;
 
 let arrayAge= [];
