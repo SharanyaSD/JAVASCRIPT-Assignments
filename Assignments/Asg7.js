@@ -25,11 +25,8 @@ let users = [{
     "gender":"female"
     }];
     
-let input = prompt ("Enter a choice: ")
 
-switch(parseInt(input)) {
-
-case 1:
+// How will you create a new copy of the object below while updating the value of address.details[0] to “5“?
     const existingObj  = {
         name: "Harry Potter",
         age: 12,
@@ -57,27 +54,9 @@ case 1:
     
     
     console.log("NewObject with 5: ",newObj);
-    break;
-case 2:
-    let obj = {
-        a:"Apple",
-        b:["Basketball","Baseball"],
-        c:{
-            call:"cellphone"
-        },
-        d:"Dog"
-    }
-    
-    filterObj(obj);
-    
-    function filterObj(obj) {
-       
-    }
-    
-    //ytd
-    break;
-case 3:
-    
+
+
+//2. Write a function filterObj that will filter out all the keys of a flat object that have objects or arrays using Object.keys and Object.entries. Example:
         console.log(users);
         console.log(mapBy(users, "first_name")) ;
 
@@ -89,9 +68,8 @@ case 3:
             });
            return mappedObj;
         }
-    break;
 
-    case 4:
+//Write a functiongroupBy to convert an array of objects into groups based on the specified key:
         console.log(groupBy(users,"gender"));
         function groupBy (array,key) {
                     const mappedObj = {};
@@ -101,12 +79,10 @@ case 3:
                     });
                 return mappedObj;
                 }
-        break;
 
-    case 5:
-    
+// Write a function that sorts an array of objects by the key that is passed in the second argument, and in the order passed as the 3rd argiment. 
             console.log(sortArray(users, "id", "desc" ));
-            
+    
             function sortArray(array, key, order ) {
                 const sortingOrder = order === 'desc' ?-1 : 1;
                 // for loop not a optimised solution so..
@@ -120,9 +96,9 @@ case 3:
                 });
                 return array ;
             }
-            break;
-        
-        case 6:
+
+//Given 2 arrays with related objects, return a new array where objects having the same id from each of the arrays are merged. Try to achieve it with a complexity - O(n).
+
             let userNames = [{
                 "id": 1,
                 "first_name": "Nicki",
@@ -230,9 +206,9 @@ case 3:
 
 
                 // //ytd..........
-                break;
 
-        case 7:
+
+                //Given 2 arrays with related objects, return a new array where objects having the same id from each of the arrays are merged. Try to achieve it with a complexity - O(n).
             let user = {
                 'id':21,
                 'name':'sharanya',
@@ -292,6 +268,4 @@ case 3:
               
                 return true;
               }
-            break;
-}
 
