@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Create a blog list page that fetches a list of users from a mock API and adds them to a table on the page after loading. Add a button to sort the users by name. Add an input to filter the table by search. (Optional: Show “Loading…” or a loading spinner on the screen till the data loads)</h3>
+    <div class="container">
+        <div class="userData">
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    <!-- user data to be inserted in this  -->
+                </tbody>
+            </table>
+            <input type="text" id="searchInput">
+            <br><br>
+            <button onclick="sortUsers()">Sort By Name </button>
+        </div>
+    </div>
+    <script src="Asg9-4.js"></script>
+</body>
+</html>
