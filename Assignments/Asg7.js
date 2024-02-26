@@ -269,3 +269,60 @@ let users = [{
                 return true;
               }
 
+//Advanced - 2
+// Write a recursive function to create a deep clone of a nested object
+console.log("Assignment 7");
+const person ={
+  name:"Sharanya",
+  tech: ['Java', 'Python','GoLang'],
+  experience: {
+    workHistory: ['2018,2019,2020,2021,2022']
+  }
+
+};
+
+// person.tech.push('C++');
+// console.log(personCloned.tech);
+  //creaeting deep clome of person
+
+// console.log(person==personCloned);
+// console.log(person.experience.workHistory ==  personCloned.experience.workHistory);
+
+
+function deepClone(obj){
+  if(obj === null || typeof(obj)!=='object') {
+    return obj;
+  }
+
+  //creating obj for array 
+  if(Array.isArray(obj)) {
+    let clonedArray =[];
+    for(let i=0; i<obj.length; i++) {
+      clonedArray.push(deepClone(obj[i]));
+    }
+    return clonedArray;
+  }
+
+  //creating obj for non array
+  let clonedObject = [];
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clonedObject[key] = deepClone(obj[key]);
+    }
+  }
+  return clonedObject;
+
+}
+
+
+const personCloned=structuredClone(person); 
+console.log('using structured(No change in original) : ',personCloned);
+
+console.log(personCloned);
+
+const clonedPerson = deepClone(person);
+
+clonedPerson.experience.workHistory.push('2024');
+console.log("Using deep clone - No change in original ");
+console.log('Deep clone of person- ',clonedPerson);
+console.log('Original person - ' ,person);
